@@ -1,5 +1,6 @@
 from tkinter import *
 root = Tk()
+root.title("Calculator")
 # mylabel1 = Label(root, text = "Hi")
 # mylabel2 = Label(root, text = "Bellend")
 #
@@ -34,6 +35,8 @@ def buttonClear():
 def buttonPlus():
     global number
     num = ent.get()
+    if num == "" or not num.isdigit():
+        return
     num = int(num)
     ent.delete(0, END)
     ent.insert(0, "+")
