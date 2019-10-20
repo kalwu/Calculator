@@ -47,10 +47,13 @@ def buttonPlus():
 
 def buttonEqual():
     global number
-    buttonPlus()
-    ent.delete(0, END)
-    ent.insert(0, number)
-    number = None
+    if ent.get() == "":
+        ent.insert(0, "0")
+    else:    
+        buttonPlus()
+        ent.delete(0, END)
+        ent.insert(0, number)
+        number = None
     return number
 
 butt1 = Button(root, text='1', padx = 40, pady = 20, command = lambda: buttonClick(1))
